@@ -1,0 +1,10 @@
+
+l
+java:S4488"JReplace "@RequestMapping(method = RequestMethod.POST)" with "@PostMapping"(‘Ò»Ôşÿÿÿÿ8Åô¦¢.
+`
+java:S3752+">Add a "method" parameter to this "@RequestMapping" annotation.(²¹âÙıÿÿÿÿ8¬ ’¢.
+X
+java:S2441$";Make "Admin" serializable or don't store it in the session.(ê’úÜ8ŒÜ¸¢.
+d
+java:S4488"HReplace "@RequestMapping(method = RequestMethod.GET)" with "@GetMapping"(Á¶‹C8–“’¢.
+Z	java:S106""9Replace this use of System.out or System.err by a logger.(ùáß˜şÿÿÿÿ8ç¡İ¢.

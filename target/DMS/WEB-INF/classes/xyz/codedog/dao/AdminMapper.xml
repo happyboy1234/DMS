@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="xyz.codedog.dao.AdminMapper">
+  <resultMap id="BaseResultMap" type="xyz.codedog.po.Admin">
+
+    <id column="a_id" jdbcType="INTEGER" property="aId" />
+    <result column="a_username" jdbcType="VARCHAR" property="aUsername" />
+    <result column="a_password" jdbcType="VARCHAR" property="aPassword" />
+    <result column="a_name" jdbcType="VARCHAR" property="aName" />
+    <result column="a_phone" jdbcType="BIGINT" property="aPhone" />
+    <result column="a_power" jdbcType="VARCHAR" property="aPower" />
+    <result column="a_describe" jdbcType="VARCHAR" property="aDescribe" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from d_admin
+    where a_id = #{aId,jdbcType=INTEGER}
+  </delete>
+
+  <insert id="insert" parameterType="xyz.codedog.po.Admin">
+    insert into d_admin (a_id, a_username, a_password, 
+      a_name, a_phone, a_power, 
+      a_describe)
+    values (#{aId,jdbcType=INTEGER}, #{aUsername,jdbcType=VARCHAR}, #{aPassword,jdbcType=VARCHAR}, 
+      #{aName,jdbcType=VARCHAR}, #{aPhone,jdbcType=BIGINT}, #{aPower,jdbcType=VARCHAR}, 
+      #{aDescribe,jdbcType=VARCHAR})
+  </insert>
+
+  <update id="updateByPrimaryKey" parameterType="xyz.codedog.po.Admin">
+    update d_admin
+    set a_username = #{aUsername,jdbcType=VARCHAR},
+      a_password = #{aPassword,jdbcType=VARCHAR},
+      a_name = #{aName,jdbcType=VARCHAR},
+      a_phone = #{aPhone,jdbcType=BIGINT},
+      a_power = #{aPower,jdbcType=VARCHAR},
+      a_describe = #{aDescribe,jdbcType=VARCHAR}
+    where a_id = #{aId,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select a_id, a_username, a_password, a_name, a_phone, a_power, a_describe
+    from d_admin
+    where a_id = #{aId,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectAll" resultMap="BaseResultMap">
+    select a_id, a_username, a_password, a_name, a_phone, a_power, a_describe
+    from d_admin
+  </select>
+
+  <select id="findAdmin" resultMap="BaseResultMap" parameterType="Admin">
+    select * from d_admin
+    <where>
+      <if test="aUsername != null and aUsername != ''">
+        a_username = #{aUsername}
+      </if>
+      <if test="aPassword != null and aPassword != ''">
+        and a_password = #{aPassword}
+      </if>
+    </where>
+  </select>
+
+
+</mapper>
