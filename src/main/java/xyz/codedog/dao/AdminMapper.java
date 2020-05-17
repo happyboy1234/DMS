@@ -16,4 +16,6 @@ public interface AdminMapper {
     int updateByPrimaryKey(Admin record);
 
     Admin findAdmin(Admin admin);
+
+    List<Admin> findAdminWithPage();
 }

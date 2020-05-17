@@ -45,7 +45,7 @@
         <li class="layui-nav-item">
             <a href="javascript:;">${sessionScope.ad.aName}</a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                <dd><a onclick="x_admin_show('切换帐号','loginOut')">切换帐号</a></dd>
+                <dd><a onclick="x_admin_show('切换帐号','loginOut.action')">切换帐号</a></dd>
                 <dd><a href="/loginOut.action">退出</a></dd>
             </dl>
         </li>
@@ -196,7 +196,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="/findAdmin">
+                        <a _href="/findAdmin.action">
                             <%--点击在右侧出现动态的Tab--%>
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>管理员列表</cite>

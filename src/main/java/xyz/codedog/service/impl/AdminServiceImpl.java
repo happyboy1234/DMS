@@ -7,6 +7,8 @@ import xyz.codedog.dao.AdminMapper;
 import xyz.codedog.po.Admin;
 import xyz.codedog.service.AdminService;
 
+import java.util.List;
+
 /**
  * @ClassName AdminServiceImpl
  * @Description TODO
@@ -24,5 +26,17 @@ public class AdminServiceImpl implements AdminService {
     public Admin findAdmin(Admin admin) {
         Admin admin1 = adminMapper.findAdmin(admin);
         return admin1;
+    }
+
+    @Override
+    public List<Admin> findAdminWithPage() {
+        List<Admin> adminList = adminMapper.findAdminWithPage();
+        return adminList;
+    }
+
+    @Override
+    public int deleteByPrimary(Integer id) {
+        int i = adminMapper.deleteByPrimaryKey(id);
+        return i;
     }
 }

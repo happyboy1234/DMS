@@ -2,6 +2,8 @@ package xyz.codedog.service;
 
 import xyz.codedog.po.Admin;
 
+import java.util.List;
+
 /**
  * @ClassName AdminService
  * @Description
@@ -11,4 +13,8 @@ import xyz.codedog.po.Admin;
  **/
 public interface AdminService {
     Admin findAdmin(Admin admin);
+
+    List<Admin> findAdminWithPage();
+
+    int deleteByPrimary(Integer id);
 }

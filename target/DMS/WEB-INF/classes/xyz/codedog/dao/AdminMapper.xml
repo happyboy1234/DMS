@@ -11,6 +11,7 @@
     <result column="a_power" jdbcType="VARCHAR" property="aPower" />
     <result column="a_describe" jdbcType="VARCHAR" property="aDescribe" />
   </resultMap>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from d_admin
     where a_id = #{aId,jdbcType=INTEGER}
@@ -59,5 +60,8 @@
     </where>
   </select>
 
+  <select id="findAdminWithPage" resultMap="BaseResultMap" parameterType="Admin">
+    select * from d_admin
+  </select>
 
 </mapper>
